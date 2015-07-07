@@ -7,9 +7,9 @@ var triviaQ = new Array(10);
 var answerKey = new Array(10);
 
 /*grabbing answers from players*/
-var questDone = 0;
-var totalRight = 0;
-var currentQuest = 0;
+var player1Score = 0;
+var player2Score = 0;
+var winner;
 var gameOn = false;// true in event
 
 triviaQ[0] = "Finish this sentence: Righty tighty, lefty _______.";
@@ -36,8 +36,12 @@ answerKey[9] = "A";
 
 
 
-
 /*----DOM connections-----*/
+var scoreB1 = document.getElementById("score1")
+scoreB1.innerHTML = player1Score;
+
+var scoreB2 = document.getElementById("score2")
+scoreB2.innerHTML = player2Score;
 
 var aBtn = document.getElementById("a");
 var bBtn = document.getElementById("b");
@@ -46,14 +50,26 @@ var dBtn = document.getElementById("d");
 var eBtn = document.getElementById("e");
 var fBtn = document.getElementById("f");
 
-var mainQ = document.getElementsByTagName("h2");
+var mainL = document.getElementById("mainLine");
+
+mainL.innerHTML = triviaQ[0];
+
 
 var continueBtn = document.getElementById("continue");
 
 /*Make continueBtn diplay question 1*/
+var count = 1;
 
 continueBtn.addEventListener("click", function(){
-  mainQ.innerHTML = triviaQ[0];
+  count++;
+  mainL.innerHTML = triviaQ[count];
+  if (count >= 9){
+    var c = confirm("Wanna play again?");
+    if (c == true){
+    count = 0;
+    }
+  }
+  return count;
 });
 
 aBtn.addEventListener("click", function(){

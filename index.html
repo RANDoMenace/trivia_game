@@ -4,44 +4,38 @@
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <h1>Trivia Game</h1>
       <header>
+        <h3>Score<h3>
         <div class="scoreR">
-          Player 1 <input id="score1" disabled="disabled" value="test1">
-          Player 2 <input id="score2" disabled="disabled" value="test2">
+          Player 1 :  <input class="sb" id="score1" disabled="disabled" value="test1">
+           Player 2 :  <input class="sb" id="score2" disabled="disabled" value="test2">
         </div>
       </header>
-
     </head>
     <body>
+    <h2 id="mainLine"></h2>
 
-      <h2 id="mainLine"></h2>
-
-      <div class="wrapper">
-        <div class="p1Cont">
-          <h3>Player 1</h3>
-          <button id="a">A</button>
-          <button id="b">B</button>
-          <button id="c">C</button>
-        </div>
-
-        <div class="p2Cont">
-          <h3>Player 2</h3>
-          <button id="d">A</button>
-          <button id="e">B</button>
-          <button id="f">C</button>
-        </div>
+    <div class="wrapper">
+      <p>Choose a answer then<br>click Continue to tally your score</p>
+      <div class="p1Cont">
+        <h3>Player 1</h3>
+        <button class="answer" id="a">A</button>
+        <button class="answer" id="b">B</button>
+        <button class="answer" id="c">C</button>
       </div>
 
-      <footer>
-
-      <div class="button">
-        <button id="continue">Continue</button>
+      <div class="p2Cont">
+        <h3>Player 2</h3>
+        <button class="answer" id="d">A</button>
+        <button class="answer" id="e">B</button>
+        <button class="answer" id="f">C</button>
       </div>
-
-    </footer>
-
-
-      <script src='js/main.js'></script>
+    </div>
+    <footer>
+    <div class="button">
+      <h3>Click to ...</h3>
+      <button class="conBtn" id="continue">Continue</button>
+    </div>
+  </footer>
+    <script src='js/main.js'></script>
     </body>
-
-
   </html>
